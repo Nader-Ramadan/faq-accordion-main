@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --main: #AD28EB;
+    --White: hsl(0, 0%, 100%);
+    --Light-pink: hsl(275, 100%, 97%);
+    --Grayish-purple: hsl(292, 16%, 49%);
+    --Dark-purple: hsl(292, 42%, 14%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    position: relative;
+}
+body {
+    padding: 0 1.5rem ;
+    background: url(./assets/images/background-pattern-mobile.svg) no-repeat, var(--Light-pink);
+}
+main {
+    display: flex;
+    flex-flow: column;
+    margin: 9rem auto;
+    padding: 1.4rem 1.5rem;
+    justify-content: space-between;
+    background: var(--White);
+    border-radius: 0.6rem;
+    max-width: 37.5rem;
+}
+.faqs {
+    display: flex;
+}
+h2 {
+    font-size: 2rem;
+    left: 0.5rem;
+    color: var(--Dark-purple);
+}
+.faqs > img {
+    scale: 0.6;
+    left: -0.5rem;
+}
+.toggle {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    gap: 1.55rem;
+    margin: 1.3rem 0 0 0;
+}
+.toggle > div {
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle > div > h3 {
+    cursor: pointer;
+}
+.toggle > div > h3:hover {
+    color: var(--main);
+    transition: 1s;
+}
+.toggle > div > img {
+    cursor: pointer;
+}
+.toggle > div > img:hover {
+    filter: brightness(0.8);
+}
+.toggle p {
+    font-weight: 400;
+    font-size: 0.88rem;
+    line-height: 1.3rem;
+    color: var(--White);
+    height: 0px;
+    visibility: hidden;
+    opacity: 0.5;
+}
+@keyframes show {
+    95% {
+        color: var(--White);
+    }
+    95%, 100% {
+        visibility: visible;
+    }
+    100% {
+        color: var(--Dark-purple);
+        height: 92.75px;
+    }
+}
+@keyframes hide {
+    
+}
+hr {
+    margin: 1.2rem 0 0 0;
+    border: 0;
+    height: 1px;
+    background: var(--Dark-purple);
+    opacity: 0.25;
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto 10rem;
+    padding: 1rem 2rem;
+    color: var(--Dark-purple);
+}
+.attribution:hover {
+    animation: pop 0.5s forwards ease-out;
+}
+@keyframes pop {
+    100% {
+        scale: 1.5;
+        border: 0.5rem solid var(--main);
+        border-radius: 0.6rem;
+        box-shadow: 0.5rem 0.5rem var(--Dark-purple);
+    }
+}
+.attribution a {
+    color: var(--main);
+    text-decoration: none;
+}
+@media screen and (min-width: 40rem) {
+    body {
+        background: url(./assets/images/background-pattern-desktop.svg) no-repeat, var(--Light-pink);
+        background-size: contain;
+        background-position: top center;
+    }
+    main {
+        margin: 10.5rem auto;
+        padding: 2.4rem 2.5rem;
+    }
+    .faqs {
+        gap: 0.85rem;
+    }
+    .faqs > img {
+        scale: 1;
+        left: 0;
+    }
+    .toggle {
+        margin: 1.9rem 0 0 0;
+    }
+    h2 {
+        font-size: 3.6rem;
+    }
+    h3 {
+        font-size: 1.125rem;
+    }
+    .toggle p {
+        font-size: 1rem;
+        line-height: 1.45rem;
+    }
+}
