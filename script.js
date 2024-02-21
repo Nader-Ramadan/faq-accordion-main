@@ -1,27 +1,20 @@
-function switchOn(val) {
-    switch (val) {
-        case 1:
-            document.getElementsByTagName("p")[0].style = "animation: show 0.5s forwards ease-out;";
-            document.getElementsByTagName("img")[1].src = "./assets/images/icon-minus.svg";
-            break;
-        case 2:
-            document.getElementsByTagName("p")[1].style = "animation: show 0.5s forwards ease-out;"
-            document.getElementsByTagName("img")[2].src = "./assets/images/icon-minus.svg"
-            break;
-        case 3:
-            document.getElementsByTagName("p")[2].style = "animation: show 0.5s forwards ease-out;"
-            document.getElementsByTagName("img")[3].src = "./assets/images/icon-minus.svg"
-            break;
-        case 4:
-            document.getElementsByTagName("p")[3].style = "animation: show 0.5s forwards ease-out;"
-            document.getElementsByTagName("img")[4].src = "./assets/images/icon-minus.svg"
-            break;
-    }
-}
-function switchOff(val) {
-    switch (val) {
-        case 1:
-            document.getElementsByTagName("p")[0].style.setProperty("animation", "none");
-            document.getElementsByTagName("img")[1].src = "./assets/images/icon-plus.svg";
-    }
-}
+let show = "animation: show 0.5s forwards ease-out;";
+let hide = "animation: hide 0.5s forwards ease-out;";
+let plusIcon = "./assets/images/icon-plus.svg";
+let minusIcon = "./assets/images/icon-minus.svg";
+
+let toggles = document.querySelectorAll(".toggle");
+let content = document.getElementsByTagName("p");
+let icons = document.querySelectorAll('[alt="plus"]');
+toggles.forEach((toggle, index) => {
+    toggle.addEventListener("click", () => {
+        if (content[index].style = show && icons[index].src.match(minusIcon)) {
+            content[index].style = hide;
+            icons[index].src = plusIcon;
+        }
+        else {
+            icons[index].src = minusIcon;
+            content[index].style = show;
+        }
+    })
+})
